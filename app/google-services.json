@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "451553487684",
+    "project_id": "drink-it-raywenderlich-tut",
+    "storage_bucket": "drink-it-raywenderlich-tut.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451553487684:android:0f15ef01ce7a3bb90d0511",
+        "android_client_info": {
+          "package_name": "com.raywenderlich.android.drinkit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451553487684-olnsn8gs522ov4br935aleab23c7h45m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzDYhkv5JqPyiOz5T49CC8MSPbP2kuGbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451553487684-olnsn8gs522ov4br935aleab23c7h45m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
