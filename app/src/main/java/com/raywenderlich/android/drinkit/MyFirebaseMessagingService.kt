@@ -34,19 +34,47 @@
 
 package com.raywenderlich.android.drinkit
 
+import android.content.Intent
+import android.os.Handler
+import android.os.Looper
+import android.widget.Toast
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
 
-//TODO: Add imports
 
 class MyFirebaseMessagingService: FirebaseMessagingService() {
 
-  // TODO: add onCreate
+  private var broadcaster: LocalBroadcastManager? = null
+
+  override fun onCreate() {
+    broadcaster = LocalBroadcastManager.getInstance(this)
+  }
+
 
   // TODO: override onNewToken
 
-  // TODO: add an onMessageReceived function
+  override fun onMessageReceived(p0: RemoteMessage) {
+    super.onMessageReceived(p0)
+    handleMessage(p0)
+  }
 
-  // TODO: add a handle message method
+  private fun handleMessage(remoteMessage: RemoteMessage) {
+    val handler = Handler(Looper.getMainLooper())
+
+    handler.post(Runnable {
+
+      remoteMessage.notification?.let {
+        val intent = Intent("MyData")
+        intent.putExtra("message", it.body)
+        intent.putExtra("text", remoteMessage.data["text"])
+        broadcaster?.sendBroadcast(intent)
+
+      Toast.makeText(baseContext, getString(R.string.handle_notification_now),
+      Toast.LENGTH_LONG).show()
+      }
+    })
+  }
 
   // TODO: Create a message receiver constant
 
